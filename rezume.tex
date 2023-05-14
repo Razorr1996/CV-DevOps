@@ -35,6 +35,9 @@
 \usepackage[normalem]{ulem} % provides "\ul" (uline) command which will break at line breaks
 
 \usepackage[english]{babel} % provides culturally determined typographical rules for wide range of languages
+
+\setlength {\marginparwidth}{2cm}
+\usepackage{todonotes}
 %-----------------------------------------
 
 \input glyphtounicode % converts glyph names to unicode
@@ -157,6 +160,7 @@
 %__________________RESUME____________________
 % You can rearrange sections in any order you may prefer
 \begin{document}
+\setlength{\footskip}{5pt}
 
 %-----------CONTACT DETAILS------------------
 % Make sure all the details are correct, you can add more links in the first row of second column if needed
@@ -170,7 +174,7 @@
   \href{https://github.com/Razorr1996}{\uline{GitHub}} $|$ % row = 2, col = 1
   %\href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
   Email: \href{mailto:basa62.1996@gmail.com}{\uline{basa62.1996@gmail.com}} $|$ % row = 2, col = 2
-  Mobile: +79819547080 \\ % row = 2, col = 2
+  Mobile: \href{tel:+79819547080}{\uline{+79819547080}} \\ % row = 2, col = 2
 \end{tabular*}
 %--------------------------------------------
 
@@ -180,7 +184,8 @@
 
 \section{DevOps Engineer}
 \small{
-  TODO I am a highly skilled web developer with over \textbf{3 years of experience} in \textbf{HTML, CSS, JavaScript, and PHP}. I have knowledge of popular frameworks such as \textbf{React, Angular, and Vue.js} and experience with REST APIs and MVC frameworks.
+\todo{sum}
+  I am a highly skilled DevOps engineer with over \textbf{6 years of experience} in \textbf{HTML, CSS, JavaScript, and PHP}. I have knowledge of popular frameworks such as \textbf{React, Angular, and Vue.js} and experience with REST APIs and MVC frameworks.
 }
 %--------------------------------------------
 
@@ -189,12 +194,13 @@
 % Add or remove resumeSectionTypes according to your needs
 
 \section{Technical Skills}
+\todo{skills}
   \resumeHeadingListStart{}
-    \resumeSectionType{Languages}{:}{JavaScript, PHP, Java, HTML, CSS}
+    \resumeSectionType{Languages}{:}{Pyhon, Bash, Rust}
     \resumeSectionType{Frameworks}{:}{React.js, Angular, Express, Node.js}
     \resumeSectionType{Libraries}{:}{Material, Redux, React Router}
-    \resumeSectionType{Databases}{:}{MongoDB, PostgreSQL}
-    \resumeSectionType{Dev Tools}{:}{Visual Studio Code, Git, Gitlab}
+    \resumeSectionType{Dev Tools}{:}{IntelliJ IDEA, Git, GitLab}
+    \resumeSectionType{Databases}{:}{PostgreSQL}
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -204,25 +210,28 @@
 
 \section{Experience}
 \resumeHeadingListStart{}
-  \resumeQuadHeading{Web Developer}{Apr 2022 -- Present}
-  {Anycompany}{Remote -- AnyCity, Anystate, Anycountry}
-    \resumeItemListStart{}
-      \resumeItem{Designed and developed dynamic and responsive websites using \textbf{HTML, CSS, JavaScript, and PHP}}
-      \resumeItem{Worked with \textbf{REST APIs} to retrieve and display data from databases}
-      \resumeItem{Improved \textbf{website performance} and speed through optimization techniques by \textbf{55\%}}
-    \resumeItemListEnd{}
+  \resumeQuadHeading{DevOps Lead}{Aug 2021 -- Present}
+  {\href{https://www.linkedin.com/company/dualbootpartners/}{Dualboot Partners}}{Remote -- Saint Petersburg, Russia}
+  \todo{w3}
+    % \resumeItemListStart{}
+    %   \resumeItem{Designed and developed dynamic and responsive websites using \textbf{HTML, CSS, JavaScript, and PHP}}
+    %   \resumeItem{Worked with \textbf{REST APIs} to retrieve and display data from databases}
+    %   \resumeItem{Improved \textbf{website performance} and speed through optimization techniques by \textbf{55\%}}
+    % \resumeItemListEnd{}
 
-  \resumeQuadHeading{Backend Developer}{Aug 2021 -- Nov 2022}
-  {Anycompany}{Anycity, Anystate, Anycountry}
-    \resumeItemListStart{}
-      \resumeItem{Worked with \textbf{MVC frameworks} to develop robust and scalable backends}
-      \resumeItem{Troubleshot and \textbf{fixed bugs} and issues in the backend to ensure \textbf{smooth operation} of the applications}
-    \resumeItemListEnd{}
+  \resumeQuadHeading{System Administrator}{Jan 2019 -- Aug 2021}
+  {\href{https://www.linkedin.com/company/solanteq/}{Solanteq}}{Saint Petersburg, Russia}
+  \todo{w2}
+    % \resumeItemListStart{}
+    %   \resumeItem{Worked with \textbf{MVC frameworks} to develop robust and scalable backends}
+    %   \resumeItem{Troubleshot and \textbf{fixed bugs} and issues in the backend to ensure \textbf{smooth operation} of the applications}
+    % \resumeItemListEnd{}
 
-  \resumeQuadHeadingChild{Backend Developer Intern}{Jan 2021 -- Aug 2021}
-    \resumeItemListStart{}
-      \resumeItem{Assisted senior web developers in the design and development of websites using \textbf{HTML, CSS, and JavaScript}}
-    \resumeItemListEnd{}
+  \resumeQuadHeading{Developer/System Administrator}{May 2017 -- Dec 2018}{}{Saint Petersburg, Russia}
+  \todo{w1}
+    % \resumeItemListStart{}
+    %   \resumeItem{Assisted senior web developers in the design and development of websites using \textbf{HTML, CSS, and JavaScript}}
+    % \resumeItemListEnd{}
 \resumeHeadingListEnd{}
 %---------------------------------------------
 
@@ -232,8 +241,10 @@
 
 \section{Education}
   \resumeHeadingListStart{}
-    \resumeQuadHeading{ITMO University}{Saint Petersburg, Russia}
-    {Master of Science in Computer Science}{Sep 2018 -- Aug 2020}
+    \resumeQuadHeading{ITMO University}{Sep 2018 -- Aug 2020}
+    {Master of Science in Computer Science}{Saint Petersburg, Russia}
+    \resumeQuadHeading{ITMO University}{Sep 2014 -- Aug 2018}
+    {Bachelor of Science in Computer Science}{Saint Petersburg, Russia}
   \resumeHeadingListEnd{}
 %---------------------------------------------
 
@@ -242,6 +253,7 @@
 % Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
 
 \section{Projects}
+\todo{prj}
   \resumeHeadingListStart{}
     \resumeTrioHeading{\href{https://project1.com}{\uline{Project 1}}}{React.js, Redux, PHP, MySQL Git}{\href{https://proect1.com/source-code/}{\uline{Source Code}}}
       \resumeItemListStart{}
@@ -264,6 +276,7 @@
 % You can add your acheivements, accolades, certifications etc. here.
 
 \section{Certifications}
+\todo{certs}
   \resumeItemListStart{}
     \resumeItem{\href{https://dummy-certification.com}{\uline{Certified Web Developer by the W3C}}}
     \resumeItem{\href{https://dummy-certification.com}{\uline{Microsoft Certified: Azure Developer Associate}}}
