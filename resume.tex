@@ -152,6 +152,10 @@
   \begin{itemize}[leftmargin=0.15in, label={}]
 }
 \newcommand{\resumeHeadingListEnd}{\end{itemize}}
+
+\newcommand{\hrefUline}[2]{
+  \href{#1}{\uline{#2}}
+}
 %-------------------------------------------
 
 
@@ -166,11 +170,11 @@
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\Huge Artem Basalaev \vspace{2pt}} &
   {Location: Budva, Montenegro} \\
-  LinkedIn: \href{https://linkedin.com/in/artem-basalaev}{\uline{artem-basalaev}} $|$
-  GitLab: \href{https://gitlab.com/Razorr1996}{\uline{@Razorr1996}} $|$
-  GitHub: \href{https://github.com/Razorr1996}{\uline{@Razorr1996}} \\
-  Email: \href{mailto:basa62.1996@gmail.com}{\uline{basa62.1996@gmail.com}} $|$
-  Mobile: \href{tel:+79819547080}{\uline{+7(981)954-70-80}} / \href{tel:+38269532916}{\uline{+382 69 532916}} \\ % row = 2, col = 2
+  LinkedIn: \hrefUline{https://linkedin.com/in/artem-basalaev}{artem-basalaev} $|$
+  GitLab: \hrefUline{https://gitlab.com/Razorr1996}{@Razorr1996} $|$
+  GitHub: \hrefUline{https://github.com/Razorr1996}{@Razorr1996} \\
+  Email: \hrefUline{mailto:basa62.1996@gmail.com}{basa62.1996@gmail.com} $|$
+  Mobile: \hrefUline{tel:+79819547080}{+7 981 954-70-80} / \hrefUline{tel:+38269532916}{+382 69 532916} \\ % row = 2, col = 2
 \end{tabular*}
 %--------------------------------------------
 
@@ -209,7 +213,7 @@ Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate).
 \section{Experience}
 \resumeHeadingListStart{}
   \resumeQuadHeading{DevOps Lead}{Aug 2021 -- Present}
-  {\href{https://www.linkedin.com/company/dualbootpartners/}{\uline{Dualboot Partners}}}{Remote}
+  {\hrefUline{https://www.linkedin.com/company/dualbootpartners/}{Dualboot Partners}}{Remote}
   \todo{w3}
   \resumeItemListStart{}
     \resumeItem{Developed cloud infrastructure for various projects (from 1 to 10+ services per environment): AWS, Terraform, GitLab CI, Ruby/Python/Node.js.}
@@ -218,7 +222,7 @@ Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate).
   \resumeItemListEnd{}
 
   \resumeQuadHeading{DevOps Engineer}{Jan 2019 -- Aug 2021}
-  {\href{https://www.linkedin.com/company/solanteq/}{\uline{Solanteq}}}{Saint Petersburg, Russia}
+  {\hrefUline{https://www.linkedin.com/company/solanteq/}{Solanteq}}{Saint Petersburg, Russia}
     \resumeItemListStart{}
       \resumeItem{Created a system for dynamic environments, powered by AWS EC2+RDS, AWS SDK (boto3) and CI/CD.}
       \resumeItem{Created Ansible Playbooks for distribute JVM+Docker applications.}
@@ -226,7 +230,8 @@ Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate).
       \resumeItem{Maintained company's infrastructure (Cloud \& On-Premise): Linux/Windows-servers, GitLab, YouTrack, TeamCity, E-Mail, laptop's configuration, office's network, etc.}
     \resumeItemListEnd{}
 
-  \resumeQuadHeading{Developer/System Administrator}{May 2017 -- Dec 2018}{\href{https://sim-lab.ru}{\uline{Computer Modelling Laboratory}}}{Saint Petersburg, Russia}
+  \resumeQuadHeading{Developer/System Administrator}{May 2017 -- Dec 2018}
+  {\hrefUline{https://sim-lab.ru}{Computer Modelling Laboratory}}{Saint Petersburg, Russia}
     \resumeItemListStart{}
       \resumeItem{Configured CI pipelines for various products (Python, C\#, Unity).}
       \resumeItem{Managed web server, proxy, and load balancer configurations with Nginx.}
@@ -253,9 +258,8 @@ Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate).
 % Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
 
 % \section{Projects}
-% \todo{prj}
 %   \resumeHeadingListStart{}
-%     \resumeTrioHeading{\href{https://project1.com}{\uline{Project 1}}}{React.js, Redux, PHP, MySQL Git}{\href{https://proect1.com/source-code/}{\uline{Source Code}}}
+%     \resumeTrioHeading{\hrefUline{https://project1.com}{Project 1}}{React.js, Redux, PHP, MySQL Git}{\hrefUline{https://proect1.com/source-code/}{Source Code}}
 %       \resumeItemListStart{}
 %         \resumeItem{Designed and developed a clean and modern website using \textbf{HTML, CSS, and JavaScript}}
 %         \resumeItem{Optimized website for \textbf{speed and user experience}}
@@ -263,7 +267,7 @@ Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate).
 %         \resumeItem{Deployed on GitHub pages via GitHub Actions}
 %       \resumeItemListEnd{}
 
-%       \resumeTrioHeading{Project 2}{Node.js, Express, JavaScript, Git}{\href{https:project2.com/source-code}{\uline{Source Code}}}
+%       \resumeTrioHeading{Project 2}{Node.js, Express, JavaScript, Git}{\hrefUline{https:project2.com/source-code}{Source Code}}
 %       \resumeItemListStart{}
 %         \resumeItem{A \textbf{CRUD application} exposed using a RESTful API made with Node.js}
 %         \resumeItem{Exposed POST, GET, PATCH and DELETE HTTP methods using \textbf{Express}}
@@ -277,10 +281,10 @@ Languages: \textbf{Russian} (Native), \textbf{English} (Upper Intermediate).
 
 \section{Certifications}
   \resumeItemListStart{}
-    \resumeItem{\href{https://www.credly.com/badges/968bad65-6464-49fb-b836-c53a0dd30daf/linked_in_profile}{\uline{AWS Certified Cloud Practitioner}}}
-    \resumeItem{\href{https://coursera.org/verify/ND55XKAHNRU4}{\uline{"Getting Started with Google Kubernetes Engine" by Google Cloud Training}}}
-    \resumeItem{\href{https://stepik.org/cert/151752?lang=en}{\uline{"Algorithms: theory and practice. Data structures" by Computer Science Center}}}
-    \resumeItem{\href{https://stepik.org/cert/39100?lang=en}{\uline{"Algorithms: theory and practice. Methods" by Computer Science Center}}}
+    \resumeItem{\hrefUline{https://www.credly.com/badges/968bad65-6464-49fb-b836-c53a0dd30daf/linked_in_profile}{AWS Certified Cloud Practitioner}}
+    \resumeItem{\hrefUline{https://coursera.org/verify/ND55XKAHNRU4}{"Getting Started with Google Kubernetes Engine" by Google Cloud Training}}
+    \resumeItem{\hrefUline{https://stepik.org/cert/151752?lang=en}{"Algorithms: theory and practice. Data structures" by Computer Science Center}}
+    \resumeItem{\hrefUline{https://stepik.org/cert/39100?lang=en}{"Algorithms: theory and practice. Methods" by Computer Science Center}}
   \resumeItemListEnd{}
 %--------------------------------------------
 
