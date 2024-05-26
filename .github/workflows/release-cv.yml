@@ -1,8 +1,9 @@
-name: Build LaTeX document
+name: Release CV
 
 on:
   push:
-  workflow_dispatch:
+    branches:
+    - master
 
 jobs:
   build_latex:
