@@ -19,13 +19,13 @@ jobs:
       id: compile_latex_document
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: ${{ env.TEX_FILE }}
+        root_file: "*.pdf"
     - name: Upload PDF file
       id: upload_pdf_file
       uses: actions/upload-artifact@v4
       with:
         name: PDF
-        path: ${{ env.PDF_FILE }}
+        path: "*.pdf"
     - name: Retrieve date
       id: resolve_date
       run: |
