@@ -31,13 +31,9 @@ jobs:
       run: |
         DATE="$(date +'%d.%m.%Y')"
         echo "date=$DATE" >> "$GITHUB_OUTPUT"
-    - name: Get latest release
-      id: get_latest_release
-      uses: pozetroninc/github-action-get-latest-release@v0.7.0
-      with:
-        repository: Razorr1996/CV-DevOps
-        excludes: prerelease, draft
-    - uses: ncipollo/release-action@v1
+    - name: Create or update release
+      id: create_or_update_release
+      uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.resolve_date.outputs.date }}
         allowUpdates: true
