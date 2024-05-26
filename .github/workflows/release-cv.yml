@@ -6,11 +6,17 @@ on:
     - master
 
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+
     env:
       TEX_FILE: "Artem Basalaev CV.tex"
       PDF_FILE: "Artem Basalaev CV.pdf"
+
     steps:
     - name: Set up Git repository
       id: setup_git_repository
@@ -20,11 +26,11 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: "*.tex"
-    - name: Upload PDF file
-      id: upload_pdf_file
+    - name: Upload Artifact for GitHub Pages
+      id: upload_artifact_for_github_pages
       uses: actions/upload-artifact@v4
       with:
-        name: PDF
+        name: github-pages
         path: "*.pdf"
     - name: Retrieve date
       id: resolve_date
@@ -38,3 +44,22 @@ jobs:
         tag: ${{ steps.resolve_date.outputs.date }}
         allowUpdates: true
         artifacts: "*.pdf"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+      with:
+        artifact_name: "github-pages"
