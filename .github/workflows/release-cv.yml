@@ -21,12 +21,17 @@ jobs:
         root_file: |
           *.tex
         texlive_version: 2024
+    - name: Build png
+      run: |
+        sudo apt update && sudo apt install -y poppler-utils
+        pdftoppm *.pdf "${FILE_PREFIX}" -png -singlefile
     - name: Upload Artifact for GitHub Pages
       uses: actions/upload-artifact@v4
       with:
         name: build
         path: |
           *.pdf
+          *.png
 
   release:
     needs: build
@@ -71,10 +76,6 @@ jobs:
       with:
         name: build
         path: ./pages
-    - name: Build png
-      run: |
-        sudo apt update && sudo apt install -y poppler-utils
-        pdftoppm *.pdf ${FILE_PREFIX} -png -singlefile
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
