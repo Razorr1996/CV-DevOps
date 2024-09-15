@@ -9,36 +9,40 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      id-token: write
-
     steps:
     - name: Set up Git repository
-      id: setup-git-repository
       uses: actions/checkout@v4
     - name: Compile LaTeX document
-      id: compile-latex-document
       uses: xu-cheng/latex-action@v3
       with:
         root_file: |
           *.tex
         texlive_version: 2024
     - name: Upload Artifact for GitHub Pages
-      id: upload-artifact-for-github-pages
       uses: actions/upload-artifact@v4
       with:
-        name: github-pages
+        name: build
         path: |
           *.pdf
-          pages/index.html
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
     - name: Retrieve date
       id: resolve-date
       run: |
         DATE="$(date +'%Y-%m-%d')"
         echo "date=$DATE" >> "$GITHUB_OUTPUT"
+    - uses: actions/download-artifact@v4
+      with:
+        name: build
     - name: Create or update release
-      id: create-or-update-release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.resolve-date.outputs.date }}
@@ -50,17 +54,21 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
-      pages: write
       id-token: write
+      pages: write
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page-url }}
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    - uses: actions/download-artifact@v4
       with:
-        artifact_name: "github-pages"
+        name: build
+        path: ./pages
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./pages
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
