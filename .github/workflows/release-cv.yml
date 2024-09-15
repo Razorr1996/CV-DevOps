@@ -31,7 +31,7 @@ jobs:
         name: github-pages
         path: |
           *.pdf
-          pages/*
+          pages/index.html
     - name: Retrieve date
       id: resolve-date
       run: |
@@ -50,6 +50,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       pages: write
       id-token: write
 
