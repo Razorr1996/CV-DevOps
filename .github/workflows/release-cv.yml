@@ -37,7 +37,7 @@ jobs:
     - name: Retrieve date
       id: resolve-date
       run: |
-        DATE="$(date +'%d.%m.%Y')"
+        DATE="$(date +'%Y-%m-%d')"
         echo "date=$DATE" >> "$GITHUB_OUTPUT"
     - name: Create or update release
       id: create-or-update-release
