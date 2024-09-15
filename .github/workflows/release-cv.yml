@@ -13,10 +13,6 @@ jobs:
       contents: write
       id-token: write
 
-    env:
-      TEX_FILE: "Artem Basalaev CV.tex"
-      PDF_FILE: "Artem Basalaev CV.pdf"
-
     steps:
     - name: Set up Git repository
       id: setup-git-repository
@@ -25,7 +21,9 @@ jobs:
       id: compile-latex-document
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: "*.tex"
+        root_file: |
+          *.tex
+        texlive_version: 2024
     - name: Upload Artifact for GitHub Pages
       id: upload-artifact-for-github-pages
       uses: actions/upload-artifact@v4
@@ -43,7 +41,7 @@ jobs:
       id: create-or-update-release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{ steps.resolve_date.outputs.date }}
+        tag: ${{ steps.resolve-date.outputs.date }}
         allowUpdates: true
         artifacts: "*.pdf"
 
@@ -57,7 +55,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page-url }}
 
     steps:
     - name: Deploy to GitHub Pages
