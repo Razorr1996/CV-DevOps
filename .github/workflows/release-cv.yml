@@ -19,26 +19,28 @@ jobs:
 
     steps:
     - name: Set up Git repository
-      id: setup_git_repository
+      id: setup-git-repository
       uses: actions/checkout@v4
     - name: Compile LaTeX document
-      id: compile_latex_document
+      id: compile-latex-document
       uses: xu-cheng/latex-action@v3
       with:
         root_file: "*.tex"
     - name: Upload Artifact for GitHub Pages
-      id: upload_artifact_for_github_pages
+      id: upload-artifact-for-github-pages
       uses: actions/upload-artifact@v4
       with:
         name: github-pages
-        path: "*.pdf,pages/*"
+        path: |
+          *.pdf
+          pages/*
     - name: Retrieve date
-      id: resolve_date
+      id: resolve-date
       run: |
         DATE="$(date +'%d.%m.%Y')"
         echo "date=$DATE" >> "$GITHUB_OUTPUT"
     - name: Create or update release
-      id: create_or_update_release
+      id: create-or-update-release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.resolve_date.outputs.date }}
