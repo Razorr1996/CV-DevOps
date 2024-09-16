@@ -51,11 +51,12 @@ jobs:
       with:
         name: build
     - name: Create or update release
-      uses: ncipollo/release-action@v1
+      uses: softprops/action-gh-release@v2
       with:
-        tag: ${{ steps.resolve-date.outputs.date }}
-        allowUpdates: true
-        artifacts: "*.pdf"
+        make_latest: true
+        tag_name: ${{ steps.resolve-date.outputs.date }}
+        files: |
+          *.pdf
 
   deploy-github-pages:
     needs: build
