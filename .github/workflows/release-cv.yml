@@ -42,11 +42,18 @@ jobs:
       contents: write
 
     steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v4
     - name: Retrieve date
       id: resolve-date
       run: |
         DATE="$(date +'%Y-%m-%d')"
         echo "date=$DATE" >> "$GITHUB_OUTPUT"
+    - name: Retrieve date
+      id: git-short-sha
+      run: |
+        SHORT_SHA="$(git rev-parse --short HEAD)"
+        echo "short_sha=$SHORT_SHA" >> "$GITHUB_OUTPUT"
     - uses: actions/download-artifact@v4
       with:
         name: build
@@ -54,7 +61,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         make_latest: true
-        tag_name: ${{ steps.resolve-date.outputs.date }}
+        tag_name: ${{ steps.resolve-date.outputs.date }}-${{ steps.git-short-sha.outputs.short_sha }}
         files: |
           *.pdf
 
