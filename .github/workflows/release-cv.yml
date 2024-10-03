@@ -18,6 +18,7 @@ jobs:
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
+        compiler: 'pdflatex'
         root_file: |
           *.tex
     - name: Print logs
