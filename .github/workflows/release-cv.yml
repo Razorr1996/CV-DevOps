@@ -20,7 +20,11 @@ jobs:
       with:
         root_file: |
           *.tex
-        texlive_version: 2024
+    - name: Print logs
+      if: failure()
+      run: |
+        ls -la
+        cat *.log
     - name: Build png
       run: |
         sudo apt update && sudo apt install -y poppler-utils
