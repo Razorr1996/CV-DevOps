@@ -54,7 +54,7 @@ jobs:
       run: |
         DATE="$(date +'%Y-%m-%d')"
         echo "date=$DATE" >> "$GITHUB_OUTPUT"
-    - name: Retrieve date
+    - name: Retrieve Git short SHA
       id: git-short-sha
       run: |
         SHORT_SHA="$(git rev-parse --short HEAD)"
