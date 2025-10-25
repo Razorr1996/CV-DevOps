@@ -59,7 +59,7 @@ jobs:
       run: |
         SHORT_SHA="$(git rev-parse --short HEAD)"
         echo "short_sha=$SHORT_SHA" >> "$GITHUB_OUTPUT"
-    - uses: actions/download-artifact@v5
+    - uses: actions/download-artifact@v6
       with:
         name: build
     - name: Create or update release
@@ -86,7 +86,7 @@ jobs:
     - name: Set up Git repository
       uses: actions/checkout@v5
     - name: Download build artifact
-      uses: actions/download-artifact@v5
+      uses: actions/download-artifact@v6
       with:
         name: build
         path: ./pages
