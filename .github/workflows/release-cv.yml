@@ -63,7 +63,7 @@ jobs:
       with:
         name: build
     - name: Create or update release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       with:
         make_latest: true
         tag_name: ${{ steps.resolve-date.outputs.date }}-${{ steps.git-short-sha.outputs.short_sha }}
