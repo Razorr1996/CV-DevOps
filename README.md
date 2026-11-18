@@ -2,7 +2,7 @@
 [![Download PDF](https://img.shields.io/badge/download-PDF-green.svg?style=flat)](https://razorr1996.github.io/CV-DevOps//Artem%20Basalaev%20CV.pdf)
 [![Download PNG](https://img.shields.io/badge/download-PNG-green.svg?style=flat)](https://razorr1996.github.io/CV-DevOps//Artem%20Basalaev%20CV.png)
 
-![CV preview](https://razorr1996.github.io/CV-DevOps//Artem%20Basalaev%20CV.png)
+[![CV preview](https://razorr1996.github.io/CV-DevOps//Artem%20Basalaev%20CV.png)](https://razorr1996.github.io/CV-DevOps//Artem%20Basalaev%20CV.pdf)
 
 ## Credits
 
